@@ -1,0 +1,20 @@
+[
+    {
+        "id":1,
+        "name":"John Doe",
+        "email":"johndoe@uic.edu",
+        "avatar":"./assets/icons/avatar2.png"
+    },
+    {
+        "id":2,
+        "name":"Jennifer Beth",
+        "email":"jenbeth@uic.edu",
+        "avatar":"./assets/icons/avatar1.png"
+    },
+    {
+        "id":3,
+        "name":"Michael Sparks",
+        "email":"mikesparks@uic.edu",
+        "avatar":"./assets/icons/avatar3.png"
+    }
+]
