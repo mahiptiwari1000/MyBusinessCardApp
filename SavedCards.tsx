@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import ProfilePanel from "./ProfilePanel";
 
-const Dashboard = () => {
+const SavedCards = () => {
 
 const [cardData,setCardData]:any = useState([]);
 
@@ -17,7 +17,7 @@ useEffect(() => {
     return (
         <ScrollView contentContainerStyle={styles.scrollViewContent}>
         <View style={styles.container}>
-            <Text style={styles.title}>Available Business Cards :</Text>
+            <Text style={styles.title}>Saved Business Cards :</Text>
             {cardData && cardData.map((d: any) =>
                 <ProfilePanel key={d.id}  cardDetails = {d} />)}
         </View>
@@ -57,4 +57,4 @@ const styles = StyleSheet.create({
       },
 });
 
-export default Dashboard;
+export default SavedCards;

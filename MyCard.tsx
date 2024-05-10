@@ -100,7 +100,7 @@ const MyCard = ({ cardData }: any) => {
         <Card.Content style={styles.content}>
           <Avatar.Image
             size={80}
-            source={require("./assets/icons/avatar2.png")}
+            source={require("./assets/icons/avatar3.png")}
             style={styles.avatar}
           />
           <Caption style={styles.distance}>{"5ft away"}</Caption>
@@ -112,7 +112,7 @@ const MyCard = ({ cardData }: any) => {
         <View style={styles.modalContent}>
           <Avatar.Image
             size={80}
-            source={require("./assets/icons/avatar2.png")}
+            source={require("./assets/icons/avatar3.png")}
             style={styles.avatar}
           />
           <Title style={styles.name}>{"John Doe"}</Title>
