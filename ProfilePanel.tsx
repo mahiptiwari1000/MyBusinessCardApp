@@ -1,14 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import Card from './MyCard';
 
-const ProfilePanel = ({ cardData }:any) => {
-    
+const ProfilePanel = ({cardDetails}: any) => {
   return (
     <View style={styles.container}>
-      <Card
-        cardData={cardData}
-      />
+      <Card cardDetails={cardDetails} />
     </View>
   );
 };

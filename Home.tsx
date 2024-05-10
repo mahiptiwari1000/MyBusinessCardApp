@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
 
-const Home = ({ navigation }:any) => {
+const Home = ({navigation}: any) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    if(username === 'mahiptiwari1000' && password === '123456'){
-        navigation.navigate('Dashboard');
-    }
+    // if (username === 'mahiptiwari1000' && password === '123456') {
+      navigation.navigate('Dashboard');
+    // }
   };
 
   return (
@@ -27,9 +33,7 @@ const Home = ({ navigation }:any) => {
         value={password}
         onChangeText={text => setPassword(text)}
       />
-      <TouchableOpacity
-        style={styles.button}
-        onPress={handleLogin}>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
       <TouchableOpacity

@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, Modal, Button } from 'react-native';
-import { Card, Title, Avatar, Caption, IconButton } from 'react-native-paper';
+import React, {useState} from 'react';
+import {View, StyleSheet, Modal, Button} from 'react-native';
+import {Card, Title, Avatar, Caption} from 'react-native-paper';
 
-const MyCard = ({ cardData }: any) => {
-
+const MyCard = ({cardDetails}: any) => {
   const [visible, setVisible] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
@@ -16,81 +15,80 @@ const MyCard = ({ cardData }: any) => {
     showDialog();
   };
 
-//   const printToFile = async () => {
-//     const html = `
-//     <html>
-//     <head>
-//       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-//       <style>
-//         body {
-//           text-align: center;
-//         }
-    
-//         .card {
-//           width: 80%;
-//           margin: 0 auto;
-//           border: 1px solid #ccc;
-//           border-radius: 8px;
-//           padding: 20px;
-//           margin-bottom: 20px;
-//           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-//         }
-    
-//         .avatar {
-//           width: 100px;
-//           height: 100px;
-//           border-radius: 50px;
-//           margin-bottom: 20px;
-//         }
-    
-//         .name {
-//           font-size: 24px;
-//           font-family: 'Helvetica Neue';
-//           font-weight: bold;
-//           margin-bottom: 10px;
-//         }
-    
-//         .email {
-//           font-size: 20px;
-//           font-family: 'Helvetica Neue';
-//           font-weight: normal;
-//           color: #666;
-//           margin-bottom: 20px;
-//         }
+  //   const printToFile = async () => {
+  //     const html = `
+  //     <html>
+  //     <head>
+  //       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  //       <style>
+  //         body {
+  //           text-align: center;
+  //         }
 
-//         .designation {
-//           font-size: 20px;
-//           font-family: 'Helvetica Neue';
-//           font-weight: normal;
-//           color: #666;
-//           margin-bottom: 30px;
-//         }
+  //         .card {
+  //           width: 80%;
+  //           margin: 0 auto;
+  //           border: 1px solid #ccc;
+  //           border-radius: 8px;
+  //           padding: 20px;
+  //           margin-bottom: 20px;
+  //           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  //         }
 
-//         .phone {
-//           font-size: 20px;
-//           font-family: 'Helvetica Neue';
-//           font-weight: normal;
-//           color: #666;
-//           margin-bottom: 40px;
-//         }
-//       </style>
-//     </head>
-//     <body>
-//       <div class="card">
-//         <h1 class="name">John Doe</h1>
-//         <h1 class="email">johndoe@uic.edu</h1>
-//         <h1 class="designation">Associate Professor</h1>
-//         <h1 class="phone">(+1)-321-221-0062</h1>
-//         <img src="./assets/icons/avatar2.png" class="avatar">
-//       </div>
-//     </body>
-//     </html>
-// `;
-//     const { uri } = await Print.printToFileAsync({ html });
-//     console.log('File has been saved to:', uri);
-//     await shareAsync(uri, { UTI: '.pdf', mimeType: 'application/pdf' });
-//   };
+  //         .avatar {
+  //           width: 100px;
+  //           height: 100px;
+  //           border-radius: 50px;
+  //           margin-bottom: 20px;
+  //         }
 
+  //         .name {
+  //           font-size: 24px;
+  //           font-family: 'Helvetica Neue';
+  //           font-weight: bold;
+  //           margin-bottom: 10px;
+  //         }
+
+  //         .email {
+  //           font-size: 20px;
+  //           font-family: 'Helvetica Neue';
+  //           font-weight: normal;
+  //           color: #666;
+  //           margin-bottom: 20px;
+  //         }
+
+  //         .designation {
+  //           font-size: 20px;
+  //           font-family: 'Helvetica Neue';
+  //           font-weight: normal;
+  //           color: #666;
+  //           margin-bottom: 30px;
+  //         }
+
+  //         .phone {
+  //           font-size: 20px;
+  //           font-family: 'Helvetica Neue';
+  //           font-weight: normal;
+  //           color: #666;
+  //           margin-bottom: 40px;
+  //         }
+  //       </style>
+  //     </head>
+  //     <body>
+  //       <div class="card">
+  //         <h1 class="name">John Doe</h1>
+  //         <h1 class="email">johndoe@uic.edu</h1>
+  //         <h1 class="designation">Associate Professor</h1>
+  //         <h1 class="phone">(+1)-321-221-0062</h1>
+  //         <img src="./assets/icons/avatar2.png" class="avatar">
+  //       </div>
+  //     </body>
+  //     </html>
+  // `;
+  //     const { uri } = await Print.printToFileAsync({ html });
+  //     console.log('File has been saved to:', uri);
+  //     await shareAsync(uri, { UTI: '.pdf', mimeType: 'application/pdf' });
+  //   };
 
   return (
     <View style={styles.container}>
@@ -100,23 +98,23 @@ const MyCard = ({ cardData }: any) => {
         <Card.Content style={styles.content}>
           <Avatar.Image
             size={80}
-            source={require("./assets/icons/avatar3.png")}
+            source={{uri: cardDetails.avatar}}
             style={styles.avatar}
           />
-          <Caption style={styles.distance}>{"5ft away"}</Caption>
-          <Title style={styles.name}>{"John Doe"}</Title>
-          <Caption style={styles.email}>{"johndoe@uic.edu"}</Caption>
+          <Caption style={styles.distance}>{'5ft away'}</Caption>
+          <Title style={styles.name}>{cardDetails?.name}</Title>
+          <Caption style={styles.email}>{cardDetails?.email}</Caption>
         </Card.Content>
       </Card>
       <Modal visible={visible} onDismiss={hideDialog} animationType="slide">
         <View style={styles.modalContent}>
           <Avatar.Image
             size={80}
-            source={require('./assets/icons/avatar3.png')}
+            source={{uri: cardDetails.avatar}}
             style={styles.avatar}
           />
-          <Title style={styles.name}>{'John Doe'}</Title>
-          <Caption style={styles.email}>{'johndoe@uic.edu'}</Caption>
+          <Title style={styles.name}>{cardDetails?.name}</Title>
+          <Caption style={styles.email}>{cardDetails?.email}</Caption>
           <Caption style={styles.designation}>{'Associate Professor'}</Caption>
           <Caption style={styles.phone}>{'(+1)-321-221-0062'}</Caption>
 
