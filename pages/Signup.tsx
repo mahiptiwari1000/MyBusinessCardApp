@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useState} from 'react';
 
-const SignUp = ({ navigation }:any) => {
+const SignUp = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -45,9 +51,7 @@ const SignUp = ({ navigation }:any) => {
         onChangeText={text => setPhoneNumber(text)}
         keyboardType="phone-pad"
       />
-      <TouchableOpacity
-        style={styles.button}
-        onPress={handleSignUp}>
+      <TouchableOpacity style={styles.button} onPress={handleSignUp}>
         <Text style={styles.buttonText}>Sign Up</Text>
       </TouchableOpacity>
     </View>

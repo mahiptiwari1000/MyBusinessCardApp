@@ -13,7 +13,7 @@ const Home = ({navigation}: any) => {
 
   const handleLogin = () => {
     // if (username === 'mahiptiwari1000' && password === '123456') {
-      navigation.navigate('Dashboard');
+    navigation.navigate('Dashboard');
     // }
   };
 
